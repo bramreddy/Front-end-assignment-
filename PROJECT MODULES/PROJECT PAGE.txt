@@ -1,0 +1,28 @@
+// path: /project
+import React from 'react';
+import { Admin, Resource } from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
+
+import { PostList } from './posts';
+
+const App = () => (
+    <Admin dataProvider={jsonServerProvider(' link')}>
+        <Resource name="posts" list={PostList} />
+    </Admin>
+);
+
+export default ;
+
+//
+import React from 'react';
+import { List, Datagrid, TextField } from 'react-admin';
+
+export const PostList = (props) => (
+    <List {...props}>
+        <Datagrid>
+            <TextField source="NAME" />
+            <TextField source="DATA" />
+            <TextField source="PROJECT DESCRIPTION(BODY)" />
+        </Datagrid>
+    </List>
+);

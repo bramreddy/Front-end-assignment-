@@ -1,0 +1,167 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { userActions } from '../_actions';
+
+class new customer form extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+           user: {
+                username: '',
+                password: ''
+           name: {
+                firstName: '',
+                lastName: '',
+            },
+           phone no: {
+                number: '',
+            },
+           email: {
+               text area: '',
+            },
+            address: {
+               text area : '',
+            },
+            submitted: false
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        const { name, value } = event.target;
+        const { user } = this.state;
+        this.setState({
+            user: {
+                ...user,
+                [name]: value
+            }
+      {
+         const { phone no, value } = event.target;
+         const { user } = this.state;
+         this.setState({
+            user: {
+                ...user,
+                [phone no]: value
+            }
+      {
+          const { email, value } = event.target;
+          const { user } = this.state;
+          this.setState({
+            user: {
+                ...user,
+                [email]: value
+            }
+      {
+          const { address, value } = event.target;
+          const { user } = this.state;
+          this.setState({
+            user: {
+                ...user,
+                [address]: value
+            }
+        });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+          
+         
+        this.setState({ submitted: true });
+        const { name } = this.state;
+        const { dispatch } = this.props;
+        if (name.firstName && name.lastName) {
+            dispatch(userActions.new customer form(name));
+     
+        
+        this.setState({ submitted: true });
+        const { phone no } = this.state;
+        const { dispatch } = this.props;
+        if (phone no.number) {
+            dispatch(userActions.new customer form(phone no));
+
+         this.setState({ submitted: true });
+        const { email } = this.state;
+        const { dispatch } = this.props;
+        if (email.''(area) {
+            dispatch(userActions.new customer form(email));
+          
+          this.setState({ submitted: true });
+        const { address } = this.state;
+        const { dispatch } = this.props;
+        if (address.''(area) {
+            dispatch(userActions.new customer form(address));
+        
+
+        }
+    }
+
+    render() {
+        const { creating new project form  } = this.props;
+        const { user, submitted } = this.state;
+        return (
+            <div className="col-md-6 col-md-offset-3">
+                <h2>new form</h2>
+                <form name="form" onSubmit={this.handleSubmit}>
+                    <div className={'form-group' + (submitted && !name.firstName ? ' has-error' : '')}>
+                        <label htmlFor="firstName">First Name</label>
+                        <input type="text" className="form-control" name="firstName" value={name.firstName} onChange={this.handleChange} />
+                        {submitted && !name.firstName &&
+                            <div className="help-block">First Name is required</div>
+                        }
+                    </div>
+                    <div className={'form-group' + (submitted && !name.lastName ? ' has-error' : '')}>
+                        <label htmlFor="lastName">Last Name</label>
+                        <input type="text" className="form-control" name="lastName" value={name.lastName} onChange={this.handleChange} />
+                        {submitted && !name.lastName &&
+                            <div className="help-block">Last Name is required</div>
+                        }
+                    </div>
+                    <div className={'form-group' + (submitted && !phone no.number ? ' has-error' : '')}>
+                        <label htmlFor="phone no:number">phone no:number</label>
+                        <input type="text" className="form-control" phone no="number" value={phone no.number} onChange={this.handleChange} />
+                        {submitted && !phone no.number &&
+                            <div className="help-block">number is required</div>
+                        }
+                     </div>
+                     <div className={'form-group' + (submitted && !email.area ? ' has-error' : '')}>
+                        <label htmlFor="email:area">email:area</label>
+                        <input type="text" className="form-control" email="area" value={email.area} onChange={this.handleChange} />
+                        {submitted && !email.area &&
+                            <div className="help-block">area is required</div>
+                        }
+                     </div>
+                      <div className={'form-group' + (submitted && !address.area ? ' has-error' : '')}>
+                        <label htmlFor="address:area">address:area</label>
+                        <input type="text" className="form-control" address="area" value={address.area} onChange={this.handleChange} />
+                        {submitted && !address.area &&
+                            <div className="help-block">area is required</div>
+                        }
+                     </div>
+                      
+                    <div className="form-group">
+                        <button className="btn btn-primary">create new customer form</button>
+                        {creating new customer form && 
+                            <img src="data:image/gif>
+                        }
+                        <Link to="/login" className="btn btn-link">Cancel</Link>
+                    </div>
+                </form>
+            </div>
+        );
+    }
+}
+
+function mapStateToProps(state) {
+    const { creating new customer form } = state.create new form;
+    return {
+        creating new form
+    };
+}
+
+const connected New form = connect(mapStateToProps)(new form);
+export { connectedNew Form as Newform };
